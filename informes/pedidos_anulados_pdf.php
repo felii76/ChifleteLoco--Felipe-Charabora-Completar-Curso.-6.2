@@ -1,3 +1,4 @@
+<?php require_once __DIR__ . "/../auth.php"; ?>
 <?php
 require("../fpdf/fpdf.php");
 require_once("../conexion.php");

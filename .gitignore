@@ -19,3 +19,5 @@ desktop.ini
 # Copias comprimidas y respaldos temporales
 *.zip
 *.bak.sql
+
+/conexion.php

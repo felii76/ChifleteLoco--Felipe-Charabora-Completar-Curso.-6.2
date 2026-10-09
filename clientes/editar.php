@@ -1,75 +1,400 @@
+
 <?php
 require_once __DIR__ . "/../auth.php";
-require_once("../conexion.php");
+require_once __DIR__ . "/../conexion.php";
 
-$id = $_GET["id"];
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    $nombre = $_POST["nombre"];
-    $apellido = $_POST["apellido"];
-    $dni = $_POST["dni"];
-    $direccion = $_POST["direccion"];
-    $telefono = $_POST["telefono"];
-    $email = $_POST["email"];
-
-    $sql = "UPDATE clientes
-            SET nombre='$nombre',
-                apellido='$apellido',
-                dni='$dni',
-                direccion='$direccion',
-                telefono='$telefono',
-                email='$email'
-            WHERE id_cliente=$id";
-
-    if($conexion->query($sql)){
-        header("Location: index.php");
-        exit;
-    }
+function mostrar($valor) {
+    return htmlspecialchars((string)($valor ?? ""), ENT_QUOTES, "UTF-8");
 }
 
-$sql = "SELECT * FROM clientes WHERE id_cliente=$id";
-$resultado = $conexion->query($sql);
-$cliente = $resultado->fetch_assoc();
-?>
+$id = filter_input(INPUT_GET, "id", FILTER_VALIDATE_INT);
 
+if (!$id || $id < 1) {
+    header("Location: index.php");
+    exit;
+}
+
+$error = "";
+
+// Buscar el cliente
+$stmt = $conexion->prepare(
+    "SELECT * FROM clientes WHERE id_cliente = ?"
+);
+$stmt->bind_param("i", $id);
+$stmt->execute();
+
+$resultado = $stmt->get_result();
+$cliente = $resultado->fetch_assoc();
+$stmt->close();
+
+if (!$cliente) {
+    http_response_code(404);
+    exit("Cliente no encontrado.");
+}
+
+// Cargar los datos actuales
+$nombre = $cliente["nombre"];
+$apellido = $cliente["apellido"];
+$dni = $cliente["dni"];
+$direccion = $cliente["direccion"];
+$telefono = $cliente["telefono"];
+$email = $cliente["email"];
+
+// Guardar los cambios
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+    $nombre = trim($_POST["nombre"] ?? "");
+    $apellido = trim($_POST["apellido"] ?? "");
+    $dni = trim($_POST["dni"] ?? "");
+    $direccion = trim($_POST["direccion"] ?? "");
+    $telefono = trim($_POST["telefono"] ?? "");
+    $email = trim($_POST["email"] ?? "");
+
+    if ($nombre === "" || $apellido === "" || $dni === "") {
+        $error = "Completá los campos obligatorios.";
+    } elseif (
+        $email !== "" &&
+        !filter_var($email, FILTER_VALIDATE_EMAIL)
+    ) {
+        $error = "Ingresá un correo electrónico válido.";
+    } else {
+
+        $sql = "UPDATE clientes
+                SET nombre = ?,
+                    apellido = ?,
+                    dni = ?,
+                    direccion = ?,
+                    telefono = ?,
+                    email = ?
+                WHERE id_cliente = ?";
+
+        $stmt = $conexion->prepare($sql);
+
+        if ($stmt) {
+            $stmt->bind_param(
+                "ssssssi",
+                $nombre,
+                $apellido,
+                $dni,
+                $direccion,
+                $telefono,
+                $email,
+                $id
+            );
+
+            if ($stmt->execute()) {
+                $stmt->close();
+                header("Location: index.php");
+                exit;
+            }
+
+            $error = "No se pudieron guardar los cambios.";
+            $stmt->close();
+        } else {
+            $error = "No se pudo preparar la consulta.";
+        }
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Editar Cliente</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Cliente - Chiflete Loco</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f3f5f9;
+            color: #1e293b;
+        }
+
+        .encabezado {
+            background: white;
+            padding: 20px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .marca {
+            font-size: 22px;
+            font-weight: bold;
+            color: #1d4ed8;
+            text-decoration: none;
+        }
+
+        .volver {
+            background: #eff6ff;
+            color: #1d4ed8;
+            text-decoration: none;
+            padding: 11px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .contenedor {
+            max-width: 750px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .titulo {
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            margin: 0 0 8px;
+            font-size: 27px;
+        }
+
+        .subtitulo {
+            margin: 0;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .formulario {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        .campos {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .campo {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: bold;
+            color: #334155;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: inherit;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px #dbeafe;
+        }
+
+        .obligatorio {
+            color: #dc2626;
+        }
+
+        .acciones {
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .guardar, .cancelar {
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .guardar {
+            background: #2563eb;
+            color: white;
+            border: none;
+        }
+
+        .guardar:hover {
+            background: #1d4ed8;
+        }
+
+        .cancelar {
+            background: #f1f5f9;
+            color: #475569;
+            border: 1px solid #e2e8f0;
+        }
+
+        .cancelar:hover {
+            background: #e2e8f0;
+        }
+
+        .error {
+            background: #fee2e2;
+            color: #b91c1c;
+            padding: 14px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .pie {
+            text-align: center;
+            color: #94a3b8;
+            font-size: 13px;
+            padding: 35px 15px;
+        }
+
+        @media (max-width: 600px) {
+            .campos {
+                grid-template-columns: 1fr;
+            }
+
+            .formulario {
+                padding: 20px;
+            }
+
+            .contenedor {
+                margin-top: 25px;
+            }
+
+            .acciones {
+                flex-direction: column-reverse;
+            }
+
+            .guardar, .cancelar {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<h1>Editar Cliente</h1>
+<header class="encabezado">
+    <a href="../index.php" class="marca">Chiflete Loco</a>
+    <a href="index.php" class="volver">← Volver a clientes</a>
+</header>
 
-<form method="POST">
+<main class="contenedor">
 
-Nombre:<br>
-<input type="text" name="nombre" value="<?= $cliente['nombre'] ?>"><br><br>
+    <div class="titulo">
+        <h1>Editar cliente</h1>
+        <p class="subtitulo">
+            Modificá los datos del cliente seleccionado.
+        </p>
+    </div>
 
-Apellido:<br>
-<input type="text" name="apellido" value="<?= $cliente['apellido'] ?>"><br><br>
+    <form method="POST" class="formulario">
 
-DNI:<br>
-<input type="text" name="dni" value="<?= $cliente['dni'] ?>"><br><br>
+        <?php if ($error !== ""): ?>
+            <div class="error"><?= mostrar($error) ?></div>
+        <?php endif; ?>
 
-Dirección:<br>
-<input type="text" name="direccion" value="<?= $cliente['direccion'] ?>"><br><br>
+        <div class="campos">
 
-Teléfono:<br>
-<input type="text" name="telefono" value="<?= $cliente['telefono'] ?>"><br><br>
+            <div class="campo">
+                <label for="nombre">
+                    Nombre <span class="obligatorio">*</span>
+                </label>
+                <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    value="<?= mostrar($nombre) ?>"
+                    required
+                >
+            </div>
 
-Email:<br>
-<input type="email" name="email" value="<?= $cliente['email'] ?>"><br><br>
+            <div class="campo">
+                <label for="apellido">
+                    Apellido <span class="obligatorio">*</span>
+                </label>
+                <input
+                    type="text"
+                    id="apellido"
+                    name="apellido"
+                    value="<?= mostrar($apellido) ?>"
+                    required
+                >
+            </div>
 
-<input type="submit" value="Guardar Cambios">
+            <div class="campo">
+                <label for="dni">
+                    DNI <span class="obligatorio">*</span>
+                </label>
+                <input
+                    type="text"
+                    id="dni"
+                    name="dni"
+                    value="<?= mostrar($dni) ?>"
+                    required
+                >
+            </div>
 
-</form>
+            <div class="campo">
+                <label for="telefono">Teléfono</label>
+                <input
+                    type="tel"
+                    id="telefono"
+                    name="telefono"
+                    value="<?= mostrar($telefono) ?>"
+                >
+            </div>
 
-<br>
+            <div class="campo">
+                <label for="direccion">Dirección</label>
+                <input
+                    type="text"
+                    id="direccion"
+                    name="direccion"
+                    value="<?= mostrar($direccion) ?>"
+                >
+            </div>
 
-<a href="index.php">Volver al listado</a>
+            <div class="campo">
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value="<?= mostrar($email) ?>"
+                >
+            </div>
+
+        </div>
+
+        <div class="acciones">
+            <a href="index.php" class="cancelar">
+                Cancelar
+            </a>
+
+            <button type="submit" class="guardar">
+                Guardar cambios
+            </button>
+        </div>
+
+    </form>
+
+</main>
+
+<footer class="pie">
+    Chiflete Loco - Sistema de Gestión
+</footer>
 
 </body>
 </html>

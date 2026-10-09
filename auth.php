@@ -5,11 +5,13 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 if (!isset($_SESSION["usuario_id"])) {
-    $rutaLogin = "/chiflete-loco/login.php";
+    $rutaLogin = "/login.php";
 
-    if (!empty($_SERVER["HTTP_HOST"]) &&
-        $_SERVER["HTTP_HOST"] !== "localhost") {
-        $rutaLogin = "/login.php";
+    if (
+        isset($_SERVER["HTTP_HOST"]) &&
+        strpos($_SERVER["HTTP_HOST"], "localhost") === 0
+    ) {
+        $rutaLogin = "/chiflete-loco/login.php";
     }
 
     header("Location: " . $rutaLogin);
