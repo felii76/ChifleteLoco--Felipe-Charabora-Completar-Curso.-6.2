@@ -1,5 +1,6 @@
 <?php
 require_once("../conexion.php");
+require_once __DIR__ . "/../auth.php";
 
 $sql = "SELECT
             clientes.id_cliente,

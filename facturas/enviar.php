@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . "/../auth.php";
 require_once("../conexion.php");
 
 $id = $_GET["id"];

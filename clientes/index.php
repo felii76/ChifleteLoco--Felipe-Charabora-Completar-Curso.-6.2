@@ -3,6 +3,7 @@ require_once("../conexion.php");
 
 $sql = "SELECT * FROM clientes ORDER BY id_cliente DESC";
 $resultado = $conexion->query($sql);
+require_once __DIR__ . "/../auth.php";
 ?>
 
 <!DOCTYPE html>

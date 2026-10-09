@@ -1,4 +1,7 @@
 
+<?php
+require_once "auth.php";
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -47,6 +50,9 @@
         <a class="boton" href="stock/">Stock</a>
         <a class="boton" href="materias_primas/">Materias Primas</a>
         <a class="boton" href="informes/">Informes</a>
+        <a class="boton" href="logout.php" style="background: #dc2626;">
+    Cerrar sesión
+</a>
     </div>
 
 </body>
