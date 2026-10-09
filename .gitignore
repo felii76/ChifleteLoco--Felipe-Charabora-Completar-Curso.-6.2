@@ -1,0 +1,21 @@
+# Archivos temporales de Windows
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Configuración local del editor
+.vscode/
+.idea/
+
+# Archivos temporales y registros
+*.log
+*.tmp
+*.bak
+
+# Archivos de configuración con datos privados
+.env
+.env.*
+
+# Copias comprimidas y respaldos temporales
+*.zip
+*.bak.sql
