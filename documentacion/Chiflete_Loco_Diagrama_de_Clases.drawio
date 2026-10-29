@@ -1,0 +1,115 @@
+<mxfile host="Electron">
+  <diagram name="Diagrama de Clases" id="3fDZqzLPVN2koM1ZI_n6">
+    <mxGraphModel dx="1433" dy="962" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="qku1RwKAlu_JkHdVfvS3-28" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=24;fontStyle=1;fontFamily=Trebuchet MS" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;DIAGRAMA DE CLASES&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="550" x="800" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="qku1RwKAlu_JkHdVfvS3-29" parent="1" style="html=1;whiteSpace=wrap;rounded=0;strokeWidth=1;strokeColor=#333333;fillColor=#ffffff;fontFamily=Trebuchet MS;verticalAlign=top;align=left;spacing=0;" value="&lt;table border=&quot;0&quot; cellpadding=&quot;2&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style=&quot;background: rgb(217, 234, 247); font-weight: bold; font-size: 16px; text-align: center;&quot;&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;Cliente&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; style=&quot;font-size:13px;padding:6px;&quot;&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ id_cliente&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ nombre&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ apellido&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ dni&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ direccion&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ telefono&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ email&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ fecha_registro&lt;/font&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; style=&quot;font-size:13px;padding:6px;&quot;&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ agregar()&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ editar()&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ eliminar()&lt;/font&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="280" width="260" x="570" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="qku1RwKAlu_JkHdVfvS3-30" parent="1" style="html=1;whiteSpace=wrap;rounded=0;strokeWidth=1;strokeColor=#333333;fillColor=#ffffff;fontFamily=Trebuchet MS;verticalAlign=top;align=left;spacing=0;" value="&lt;table border=&quot;0&quot; cellpadding=&quot;2&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style=&quot;background: rgb(217, 234, 247); font-weight: bold; font-size: 16px; text-align: center;&quot;&gt;&lt;font&gt;Pedido&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; style=&quot;font-size:13px;padding:6px;&quot;&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;+ id_pedido&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;+ id_cliente&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;+ fecha&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;+ estado&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;+ total&lt;/font&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; style=&quot;font-size:13px;padding:6px;&quot;&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;+ crear()&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;+ modificar()&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;+ cambiarEstado()&lt;/font&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="220" width="260" x="920" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="qku1RwKAlu_JkHdVfvS3-31" parent="1" style="html=1;whiteSpace=wrap;rounded=0;strokeWidth=1;strokeColor=#333333;fillColor=#ffffff;fontFamily=Trebuchet MS;verticalAlign=top;align=left;spacing=0;" value="&lt;table border=&quot;0&quot; cellpadding=&quot;2&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style=&quot;background: rgb(217, 234, 247); font-weight: bold; font-size: 16px; text-align: center;&quot;&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;Factura&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; style=&quot;font-size:13px;padding:6px;&quot;&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ id_factura&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ id_pedido&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ fecha&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ total&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ enviada&lt;/font&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; style=&quot;font-size:13px;padding:6px;&quot;&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ generar()&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ enviar()&lt;/font&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="200" width="260" x="1270" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="qku1RwKAlu_JkHdVfvS3-32" parent="1" style="html=1;whiteSpace=wrap;rounded=0;strokeWidth=1;strokeColor=#333333;fillColor=#ffffff;fontFamily=Trebuchet MS;verticalAlign=top;align=left;spacing=0;" value="&lt;table border=&quot;0&quot; cellpadding=&quot;2&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style=&quot;background: rgb(217, 234, 247); font-weight: bold; font-size: 16px; text-align: center;&quot;&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;DetallePedido&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; style=&quot;font-size:13px;padding:6px;&quot;&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ id_detalle&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ id_pedido&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ id_producto&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ cantidad&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ precio_unitario&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ subtotal&lt;/font&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; style=&quot;font-size:13px;padding:6px;&quot;&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ calcularSubtotal()&lt;/font&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="220" width="260" x="920" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="qku1RwKAlu_JkHdVfvS3-33" parent="1" style="html=1;whiteSpace=wrap;rounded=0;strokeWidth=1;strokeColor=#333333;fillColor=#ffffff;fontFamily=Trebuchet MS;verticalAlign=top;align=left;spacing=0;" value="&lt;table border=&quot;0&quot; cellpadding=&quot;2&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style=&quot;background: rgb(217, 234, 247); font-weight: bold; font-size: 16px; text-align: center;&quot;&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;Producto&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; style=&quot;font-size:13px;padding:6px;&quot;&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ id_producto&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ nombre&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ descripcion&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ precio&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ stock&lt;/font&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; style=&quot;font-size:13px;padding:6px;&quot;&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ agregar()&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ editar()&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ eliminar()&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ actualizarStock()&lt;/font&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="250" width="260" x="1270" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="qku1RwKAlu_JkHdVfvS3-34" parent="1" style="html=1;whiteSpace=wrap;rounded=0;strokeWidth=1;strokeColor=#333333;fillColor=#ffffff;fontFamily=Trebuchet MS;verticalAlign=top;align=left;spacing=0;" value="&lt;table border=&quot;0&quot; cellpadding=&quot;2&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style=&quot;background: rgb(217, 234, 247); font-weight: bold; font-size: 16px; text-align: center;&quot;&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;MovimientoStock&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; style=&quot;font-size:13px;padding:6px;&quot;&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ id_movimiento&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ id_producto&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ tipo&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ cantidad&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ fecha&lt;/font&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; style=&quot;font-size:13px;padding:6px;&quot;&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ registrar()&lt;/font&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="220" width="270" x="1570" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="qku1RwKAlu_JkHdVfvS3-35" parent="1" style="html=1;whiteSpace=wrap;rounded=0;strokeWidth=1;strokeColor=#333333;fillColor=#ffffff;fontFamily=Trebuchet MS;verticalAlign=top;align=left;spacing=0;" value="&lt;table border=&quot;0&quot; cellpadding=&quot;2&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style=&quot;background: rgb(217, 234, 247); font-weight: bold; font-size: 16px; text-align: center;&quot;&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;MateriaPrima&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; style=&quot;font-size:13px;padding:6px;&quot;&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ id_materia_prima&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ nombre&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ unidad&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ stock&lt;/font&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; style=&quot;font-size:13px;padding:6px;&quot;&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ agregar()&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ editar()&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ eliminar()&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;+ actualizarStock()&lt;/font&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="210" width="260" x="570" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="qku1RwKAlu_JkHdVfvS3-36" parent="1" style="html=1;whiteSpace=wrap;rounded=0;strokeWidth=1;strokeColor=#333333;fillColor=#ffffff;fontFamily=Trebuchet MS;verticalAlign=top;align=left;spacing=0;" value="&lt;table border=&quot;0&quot; cellpadding=&quot;2&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style=&quot;background: rgb(217, 234, 247); font-weight: bold; font-size: 16px; text-align: center;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;MovimientoStockMaterias&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; style=&quot;font-size:13px;padding:6px;&quot;&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;+ id_movimiento&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;+ id_materia_prima&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;+ tipo&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;+ cantidad&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;+ fecha&lt;/font&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; style=&quot;font-size:13px;padding:6px;&quot;&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;+ registrar()&lt;/font&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="220" width="310" x="545" y="1010" as="geometry" />
+        </mxCell>
+        <mxCell id="qku1RwKAlu_JkHdVfvS3-37" edge="1" parent="1" source="qku1RwKAlu_JkHdVfvS3-29" style="strokeColor=#333333;endArrow=none;html=1;orthogonalLoop=1;rounded=0;" target="qku1RwKAlu_JkHdVfvS3-30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qku1RwKAlu_JkHdVfvS3-38" connectable="0" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontFamily=Trebuchet MS;align=center;" value="1" vertex="1">
+          <mxGeometry relative="1" x="0.1" as="geometry">
+            <mxPoint x="530" y="320" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="qku1RwKAlu_JkHdVfvS3-39" connectable="0" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontFamily=Trebuchet MS;align=center;" value="N" vertex="1">
+          <mxGeometry relative="1" x="0.9" as="geometry">
+            <mxPoint x="530" y="320" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="qku1RwKAlu_JkHdVfvS3-40" edge="1" parent="1" source="qku1RwKAlu_JkHdVfvS3-30" style="strokeColor=#333333;endArrow=none;html=1;orthogonalLoop=1;rounded=0;" target="qku1RwKAlu_JkHdVfvS3-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qku1RwKAlu_JkHdVfvS3-41" connectable="0" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontFamily=Trebuchet MS;align=center;" value="1" vertex="1">
+          <mxGeometry relative="1" x="0.1" as="geometry">
+            <mxPoint x="530" y="320" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="qku1RwKAlu_JkHdVfvS3-42" connectable="0" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontFamily=Trebuchet MS;align=center;" value="1" vertex="1">
+          <mxGeometry relative="1" x="0.9" as="geometry">
+            <mxPoint x="530" y="320" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="qku1RwKAlu_JkHdVfvS3-43" edge="1" parent="1" source="qku1RwKAlu_JkHdVfvS3-30" style="strokeColor=#333333;endArrow=none;html=1;orthogonalLoop=1;rounded=0;" target="qku1RwKAlu_JkHdVfvS3-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qku1RwKAlu_JkHdVfvS3-44" connectable="0" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontFamily=Trebuchet MS;align=center;" value="1" vertex="1">
+          <mxGeometry relative="1" x="0.1" as="geometry">
+            <mxPoint x="530" y="320" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="qku1RwKAlu_JkHdVfvS3-45" connectable="0" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontFamily=Trebuchet MS;align=center;" value="N" vertex="1">
+          <mxGeometry relative="1" x="0.9" as="geometry">
+            <mxPoint x="530" y="320" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="qku1RwKAlu_JkHdVfvS3-46" edge="1" parent="1" source="qku1RwKAlu_JkHdVfvS3-33" style="strokeColor=#333333;endArrow=none;html=1;orthogonalLoop=1;rounded=0;" target="qku1RwKAlu_JkHdVfvS3-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qku1RwKAlu_JkHdVfvS3-47" connectable="0" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontFamily=Trebuchet MS;align=center;" value="1" vertex="1">
+          <mxGeometry relative="1" x="0.1" as="geometry">
+            <mxPoint x="530" y="320" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="qku1RwKAlu_JkHdVfvS3-48" connectable="0" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontFamily=Trebuchet MS;align=center;" value="N" vertex="1">
+          <mxGeometry relative="1" x="0.9" as="geometry">
+            <mxPoint x="530" y="320" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="qku1RwKAlu_JkHdVfvS3-49" edge="1" parent="1" source="qku1RwKAlu_JkHdVfvS3-33" style="strokeColor=#333333;endArrow=none;html=1;orthogonalLoop=1;rounded=0;" target="qku1RwKAlu_JkHdVfvS3-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qku1RwKAlu_JkHdVfvS3-50" connectable="0" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontFamily=Trebuchet MS;align=center;" value="1" vertex="1">
+          <mxGeometry relative="1" x="0.1" as="geometry">
+            <mxPoint x="530" y="320" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="qku1RwKAlu_JkHdVfvS3-51" connectable="0" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontFamily=Trebuchet MS;align=center;" value="N" vertex="1">
+          <mxGeometry relative="1" x="0.9" as="geometry">
+            <mxPoint x="530" y="320" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="qku1RwKAlu_JkHdVfvS3-52" edge="1" parent="1" source="qku1RwKAlu_JkHdVfvS3-35" style="strokeColor=#333333;endArrow=none;html=1;orthogonalLoop=1;rounded=0;" target="qku1RwKAlu_JkHdVfvS3-36">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qku1RwKAlu_JkHdVfvS3-53" connectable="0" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontFamily=Trebuchet MS;align=center;" value="1" vertex="1">
+          <mxGeometry relative="1" x="0.1" as="geometry">
+            <mxPoint x="530" y="320" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="qku1RwKAlu_JkHdVfvS3-54" connectable="0" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontFamily=Trebuchet MS;align=center;" value="N" vertex="1">
+          <mxGeometry relative="1" x="0.9" as="geometry">
+            <mxPoint x="530" y="320" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
